@@ -1,8 +1,8 @@
 import React from "react";
 
-type GreetingsProps = {
+export type GreetingsProps = {
   name: string;
-  mark: string;
+  mark?: string;
   optional?: string;
   onClick: (name: string) => void;
 };
@@ -13,6 +13,7 @@ const Greetings = ({ name, mark, optional, onClick }: GreetingsProps) => {
   return (
     <>
       <div>
+        <h1>Greetings</h1>
         <p>Hello, {name + mark}</p>
         {optional && <p>{optional}</p>}
         <div>
