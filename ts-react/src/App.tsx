@@ -2,6 +2,7 @@ import React from "react";
 import { Counter } from "./components/Counter";
 import Form, { FormProps } from "./components/Form";
 import Greetings, { GreetingsProps } from "./components/Greetings";
+import ReducerSample from "./components/ReducerSample";
 
 const App = () => {
   const greetingProps: GreetingsProps = {
@@ -19,8 +20,9 @@ const App = () => {
   return (
     <>
       <Greetings {...greetingProps} />
-      <Counter />
       <Form {...formProps} />
+      <Counter />
+      <ReducerSample />
     </>
   );
 };
