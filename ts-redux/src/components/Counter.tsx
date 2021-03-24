@@ -15,7 +15,7 @@ const Counter = ({
 }: CounterProps) => {
   return (
     <div>
-      <h1>{count}</h1>
+      <p>count: {count}</p>
       <button onClick={handleIncrease}>+1</button>
       <button onClick={handleDecrease}>-1</button>
       <button onClick={() => handleIncreaseBy(5)}>+5</button>

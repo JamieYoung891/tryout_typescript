@@ -25,7 +25,7 @@ const initialState: TodosState = [
   { id: 3, text: 'Make ToDo List', done: false }
 ]
 
-const todos = (state: TodosState, action: TodosAction) => {
+const todos = (state: TodosState = initialState, action: TodosAction) => {
   switch (action.type) {
     case ADD_TODO:
       const nextId = Math.max(0, ...state.map(todo => todo.id)) + 1

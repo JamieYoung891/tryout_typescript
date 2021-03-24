@@ -4,7 +4,12 @@ import Counter from "./Counter";
 
 const CounterContainer = () => {
   const counterProps = useCounter();
-  return <Counter {...counterProps} />;
+  return (
+    <div>
+      <h1>Counter</h1>
+      <Counter {...counterProps} />
+    </div>
+  );
 };
 
 export default CounterContainer;
