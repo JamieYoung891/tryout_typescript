@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+import { useTodosDispatch } from "../contexts/TodosContext";
 
 const TodoForm = () => {
   const [value, setValue] = useState("");
+  const dispatch = useTodosDispatch();
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // submit
+    dispatch({ type: "CREATE", text: value });
     setValue("");
   };
 
