@@ -5,14 +5,14 @@ const TodoForm = () => {
   const [value, setValue] = useState("");
   const dispatch = useTodosDispatch();
 
-  const onSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     dispatch({ type: "CREATE", text: value });
     setValue("");
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={handleSubmit}>
       <input
         value={value}
         placeholder="Add your task :)"
