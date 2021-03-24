@@ -19,7 +19,7 @@ const counter = (state: CounterState = initialState, action: CounterAction) => {
     case INCREASE:
       return { count: state.count + 1 }
     case DECREASE:
-      return { count: state.count + 1 }
+      return { count: state.count - 1 }
     case INCREASE_BY:
       return { count: state.count + action.payload }
 
