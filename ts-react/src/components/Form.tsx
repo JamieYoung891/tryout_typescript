@@ -25,9 +25,7 @@ const Form = ({ onSubmit }: FormProps) => {
     onSubmit(inputs);
     setInputs(initialInputs);
 
-    if (inputRef.current) {
-      inputRef.current.focus();
-    }
+    inputRef?.current?.focus();
   };
 
   return (
