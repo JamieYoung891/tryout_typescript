@@ -3,22 +3,25 @@ import React from "react";
 type GreetingsProps = {
   name: string;
   mark: string;
+  optional?: string;
+  onClick: (name: string) => void;
 };
 
-// const Greetings: React.FC<GreetingsProps> = ({ name, mark = "!" }) => (
-//   <div>Hello, {name}{mark}</div>
-// );
+const Greetings = ({ name, mark, optional, onClick }: GreetingsProps) => {
+  const handleClick = () => onClick(name);
 
-// Greetings.defaultProps = {
-//   mark: "!",
-// };
-
-// above code emits error regarding mark
-// below code works well
-
-const Greetings = ({ name, mark }: GreetingsProps) => (
-  <div>Hello, {name + mark}</div>
-);
+  return (
+    <>
+      <div>
+        <p>Hello, {name + mark}</p>
+        {optional && <p>{optional}</p>}
+        <div>
+          <button onClick={handleClick}>Click Me</button>
+        </div>
+      </div>
+    </>
+  );
+};
 
 Greetings.defaultProps = {
   mark: "!",

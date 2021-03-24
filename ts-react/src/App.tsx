@@ -2,7 +2,14 @@ import React from "react";
 import Greetings from "./components/Greetings";
 
 const App: React.FC = () => {
-  return <Greetings name="Jamie" />;
+  const greetingProps = {
+    name: "Jamie",
+    onClick: (name: string) => {
+      console.log(`${name} says Hello :)`);
+    },
+  };
+
+  return <Greetings {...greetingProps} />;
 };
 
 export default App;
